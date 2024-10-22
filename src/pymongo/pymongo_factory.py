@@ -32,7 +32,7 @@ class PyMongoFactory:
             print("Reusing existing MongoClient")
         return self._client_instance  # Return the existing instance
 
-    def close_client(self):
+    def destroy(self):
         """
         Closes the MongoClient instance if it exists.
         """
