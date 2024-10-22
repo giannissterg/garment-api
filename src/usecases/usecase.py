@@ -6,3 +6,4 @@ class Usecase[F, T](ABC):
     @abstractmethod
     def execute(self, filter: F) -> T:
         """To be implemented"""
+        pass
