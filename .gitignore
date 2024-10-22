@@ -13,4 +13,5 @@ wheels/
 
 .vscode/
 
-.env
+.debug.env
+.prod.env
