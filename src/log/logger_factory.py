@@ -1,7 +1,7 @@
-from logger_config import LoggerConfig
 from abc import ABC, abstractmethod
 import logging
 
+from .logger_config import LoggerConfig
 
 class LoggerFactory(ABC):
     @abstractmethod

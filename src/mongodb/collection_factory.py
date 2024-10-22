@@ -11,7 +11,7 @@ class CollectionFactory:
         Includes error handling and optional collection options.
         """
         db = self.db_factory.create(db_name)
-        if db:
+        if db is not None:
             try:
                 collection = db.get_collection(collection_name, **collection_options)
                 return collection

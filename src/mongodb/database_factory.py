@@ -1,14 +1,15 @@
+from typing import Optional
 from pymongo import errors
 from pymongo.database import Database
 
-from pymongo.pymongo_factory import PyMongoFactory
+from pymongo_factory import PyMongoFactory
 
 
 class DatabaseFactory:
     def __init__(self, mongo_factory: PyMongoFactory):
         self.mongo_factory = mongo_factory
 
-    def create(self, database_name) -> Database:
+    def create(self, database_name) -> Optional[Database]:
         """
         Creates and returns a database instance with error handling and optional database options.
         """

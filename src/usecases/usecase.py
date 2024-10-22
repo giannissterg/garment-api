@@ -7,3 +7,11 @@ class Usecase[F, T](ABC):
     def execute(self, filter: F) -> T:
         """To be implemented"""
         pass
+
+class AsyncUsecase[F, T](ABC):
+    """Usecase interface"""
+
+    @abstractmethod
+    async def execute(self, filter: F) -> T:
+        """To be implemented"""
+        pass

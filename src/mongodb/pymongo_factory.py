@@ -1,4 +1,5 @@
 
+from typing import Optional
 from pymongo import MongoClient, errors
 
 
@@ -12,7 +13,7 @@ class PyMongoFactory:
         self.client_options = client_options
         self._client_instance = None  # Instance-level MongoClient reference
 
-    def create(self) -> MongoClient:
+    def create(self) -> Optional[MongoClient]:
         """
         Creates and returns a MongoClient instance with error handling.
         Reuses the client if it was already created (instance-level reuse).
@@ -22,7 +23,7 @@ class PyMongoFactory:
                 # Create a new MongoClient instance only if it hasn't been created yet
                 self._client_instance = MongoClient(self.uri, **self.client_options)
                 print("MongoClient created")
-            except errors.ConnectionError as ce:
+            except errors.ConnectionFailure as ce:
                 print(f"Error connecting to MongoDB: {ce}")
                 return None
             except errors.ConfigurationError as conf_err:

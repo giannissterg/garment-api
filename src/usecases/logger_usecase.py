@@ -1,7 +1,7 @@
 from logging import Logger
 from typing import Callable 
 
-from usecases.usecase import Usecase
+from .usecase import Usecase
 
 
 class LoggerUsecase[F, T](Usecase[F, T]):
@@ -10,7 +10,7 @@ class LoggerUsecase[F, T](Usecase[F, T]):
     self.logger = logger
     self.logCallback = logCallback
 
-  async def execute(self, filter: F) -> T:
-    result = await self.inner_usecase.execute(filter)
+  def execute(self, filter: F) -> T:
+    result = self.inner_usecase.execute(filter)
     self.logger.info(self.logCallback(result))
     return result

@@ -1,26 +1,26 @@
-from usecases.usecase import Usecase
+from usecases.usecase import AsyncUsecase
 from motor.motor_asyncio import AsyncIOMotorCollection
 
 
-class MotorInsertUsecase[M](Usecase[M, bool]):
+class MotorInsertUsecase[M](AsyncUsecase[M, bool]):
     def __init__(self, collection: AsyncIOMotorCollection) -> None:
         self.collection = collection
     
-    def execute(self, data: M) -> bool:
+    async def execute(self, filter: M) -> bool:
         try:
-            self.collection.insert_one(data)
+            await self.collection.insert_one(filter)
             return True
         except Exception:
             return False
 
 
-class MotorInsertManyUsecase[M](Usecase[list[M], bool]):
+class MotorInsertManyUsecase[M](AsyncUsecase[list[M], bool]):
     def __init__(self, collection: AsyncIOMotorCollection) -> None:
         self.collection = collection
     
-    async def execute(self, data: list[M]) -> bool:
+    async def execute(self, filter: list[M]) -> bool:
         try:
-            result = await self.collection.insert_many(data, ordered=False)
+            result = await self.collection.insert_many(filter, ordered=False)
             print(result.inserted_ids)
             return True
         except Exception:

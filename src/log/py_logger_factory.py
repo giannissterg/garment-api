@@ -1,6 +1,6 @@
 import logging
-from logger.logger_config import LoggerConfig
-from logger.logger_factory import LoggerFactory
+from .logger_config import LoggerConfig
+from .logger_factory import LoggerFactory
 
 
 class PyLoggerFactory(LoggerFactory):

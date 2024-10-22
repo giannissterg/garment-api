@@ -13,7 +13,7 @@ MONGO_URI = "mongodb://root:root@localhost:27017"
 DB_NAME = "products"
 COLLECTION_NAME = "gmc_products"
 
-client = AsyncIOMotorClient(MONGO_URI)
+client: AsyncIOMotorClient = AsyncIOMotorClient(MONGO_URI)
 db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
 target_collection = db["new_collection"]
