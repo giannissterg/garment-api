@@ -1,0 +1,24 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: sh
+    args:
+      - -c
+      - |
+        docker build --tag=$_IMAGE_NAME:$_IMAGE_TAG --tag=$_IMAGE_NAME:$SHORT_SHA .
+        docker push --all-tags $_IMAGE_NAME
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - $_CLOUD_RUN_INSTANCE
+      - --image=$_IMAGE_NAME:$_IMAGE_TAG
+      - --region=$_CLOUD_RUN_REGION
+
+images:
+  - $_IMAGE_NAME:$_IMAGE_TAG
+  - $_IMAGE_NAME:$SHORT_SHA
+
+options:
+  logging: CLOUD_LOGGING_ONLY
