@@ -33,6 +33,15 @@ wheels = [
 ]
 
 [[package]]
+name = "cfgv"
+version = "3.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/11/74/539e56497d9bd1d484fd863dd69cbbfa653cd2aa27abfe35653494d85e94/cfgv-3.4.0.tar.gz", hash = "sha256:e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560", size = 7114 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/55/51844dd50c4fc7a33b653bfaba4c2456f06955289ca770a5dbd5fd267374/cfgv-3.4.0-py2.py3-none-any.whl", hash = "sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9", size = 7249 },
+]
+
+[[package]]
 name = "click"
 version = "8.1.7"
 source = { registry = "https://pypi.org/simple" }
@@ -54,12 +63,30 @@ wheels = [
 ]
 
 [[package]]
+name = "distlib"
+version = "0.3.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0d/dd/1bec4c5ddb504ca60fc29472f3d27e8d4da1257a854e1d96742f15c1d02d/distlib-0.3.9.tar.gz", hash = "sha256:a60f20dea646b8a33f3e7772f74dc0b2d0772d2837ee1342a00645c81edf9403", size = 613923 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/91/a1/cf2472db20f7ce4a6be1253a81cfdf85ad9c7885ffbed7047fb72c24cf87/distlib-0.3.9-py2.py3-none-any.whl", hash = "sha256:47f8c22fd27c27e25a65601af709b38e4f0a45ea4fc2e710f65755fa8caaaf87", size = 468973 },
+]
+
+[[package]]
 name = "dnspython"
 version = "2.7.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz", hash = "sha256:ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1", size = 345197 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/1b/e0a87d256e40e8c888847551b20a017a6b98139178505dc7ffb96f04e954/dnspython-2.7.0-py3-none-any.whl", hash = "sha256:b4c34b7d10b51bcc3a5071e7b8dee77939f1e878477eeecc965e9835f63c6c86", size = 313632 },
+]
+
+[[package]]
+name = "filelock"
+version = "3.16.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9d/db/3ef5bb276dae18d6ec2124224403d1d67bccdbefc17af4cc8f553e341ab1/filelock-3.16.1.tar.gz", hash = "sha256:c249fbfcd5db47e5e2d6d62198e565475ee65e4831e2561c8e313fa7eb961435", size = 18037 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b9/f8/feced7779d755758a52d1f6635d990b8d98dc0a29fa568bbe0625f18fdf3/filelock-3.16.1-py3-none-any.whl", hash = "sha256:2082e5703d51fbf98ea75855d9d5527e33d8ff23099bec374a134febee6946b0", size = 16163 },
 ]
 
 [[package]]
@@ -76,6 +103,12 @@ dependencies = [
     { name = "uvicorn" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pre-commit" },
+    { name = "typos" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "jsonlines", specifier = ">=4.0.0" },
@@ -87,6 +120,12 @@ requires-dist = [
     { name = "uvicorn", specifier = ">=0.32.0" },
 ]
 
+[package.metadata.requires-dev]
+dev = [
+    { name = "pre-commit", specifier = ">=4.0.1" },
+    { name = "typos", specifier = ">=1.26.1" },
+]
+
 [[package]]
 name = "h11"
 version = "0.14.0"
@@ -94,6 +133,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz", hash = "sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d", size = 100418 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl", hash = "sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761", size = 58259 },
+]
+
+[[package]]
+name = "identify"
+version = "2.6.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/29/bb/25024dbcc93516c492b75919e76f389bac754a3e4248682fba32b250c880/identify-2.6.1.tar.gz", hash = "sha256:91478c5fb7c3aac5ff7bf9b4344f803843dc586832d5f110d672b19aa1984c98", size = 99097 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7d/0c/4ef72754c050979fdcc06c744715ae70ea37e734816bb6514f79df77a42f/identify-2.6.1-py2.py3-none-any.whl", hash = "sha256:53863bcac7caf8d2ed85bd20312ea5dcfc22226800f6d6881f232d861db5a8f0", size = 98972 },
 ]
 
 [[package]]
@@ -127,6 +175,40 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6a/d1/06af0527fd02d49b203db70dba462e47275a3c1094f830fdaf090f0cb20c/motor-3.6.0.tar.gz", hash = "sha256:0ef7f520213e852bf0eac306adf631aabe849227d8aec900a2612512fb9c5b8d", size = 278447 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b4/c2/bba4dce0dc56e49d95c270c79c9330ed19e6b71a2a633aecf53e7e1f04c9/motor-3.6.0-py3-none-any.whl", hash = "sha256:9f07ed96f1754963d4386944e1b52d403a5350c687edc60da487d66f98dbf894", size = 74802 },
+]
+
+[[package]]
+name = "nodeenv"
+version = "1.9.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/43/16/fc88b08840de0e0a72a2f9d8c6bae36be573e475a6326ae854bcc549fc45/nodeenv-1.9.1.tar.gz", hash = "sha256:6ec12890a2dab7946721edbfbcd91f3319c6ccc9aec47be7c7e6b7011ee6645f", size = 47437 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/1d/1b658dbd2b9fa9c4c9f32accbfc0205d532c8c6194dc0f2a4c0428e7128a/nodeenv-1.9.1-py2.py3-none-any.whl", hash = "sha256:ba11c9782d29c27c70ffbdda2d7415098754709be8a7056d79a737cd901155c9", size = 22314 },
+]
+
+[[package]]
+name = "platformdirs"
+version = "4.3.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/13/fc/128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4/platformdirs-4.3.6.tar.gz", hash = "sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907", size = 21302 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3c/a6/bc1012356d8ece4d66dd75c4b9fc6c1f6650ddd5991e421177d9f8f671be/platformdirs-4.3.6-py3-none-any.whl", hash = "sha256:73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb", size = 18439 },
+]
+
+[[package]]
+name = "pre-commit"
+version = "4.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cfgv" },
+    { name = "identify" },
+    { name = "nodeenv" },
+    { name = "pyyaml" },
+    { name = "virtualenv" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2e/c8/e22c292035f1bac8b9f5237a2622305bc0304e776080b246f3df57c4ff9f/pre_commit-4.0.1.tar.gz", hash = "sha256:80905ac375958c0444c65e9cebebd948b3cdb518f335a091a670a89d652139d2", size = 191678 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/16/8f/496e10d51edd6671ebe0432e33ff800aa86775d2d147ce7d43389324a525/pre_commit-4.0.1-py2.py3-none-any.whl", hash = "sha256:efde913840816312445dc98787724647c65473daefe420785f885e8ed9a06878", size = 218713 },
 ]
 
 [[package]]
@@ -234,6 +316,23 @@ wheels = [
 ]
 
 [[package]]
+name = "typos"
+version = "1.26.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b1/fa/40a21d167bdc9ee4253781b970faf1975febfc25a4fc6b446582e0555376/typos-1.26.1.tar.gz", hash = "sha256:b66dbda7f36f0bbd905b25e3352a48330bd12a6b644c27ad43cdbe7d8295559d", size = 1111988 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/de/cd/e52d8bd629644a0d75c126dc50b61bdedb8966f9aebfe09246da50480a1d/typos-1.26.1-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:519a3a132b82f4fc5838c1dd85f4ab845f6ec3917e2e2bbc26cfd2a76a8a2e53", size = 2990463 },
+    { url = "https://files.pythonhosted.org/packages/47/91/409afb4c7800917e5fee52de12aad473f047b35fc97a1742b9bee50f050a/typos-1.26.1-py3-none-macosx_11_0_arm64.whl", hash = "sha256:d130b5ff12e4f98d002d5615f8941c205b2f23a935423a8964babf0cabff7484", size = 2890132 },
+    { url = "https://files.pythonhosted.org/packages/23/84/44b4cb8f3cc25913dcf05eb157dd5278c0cd34bcc56663d57875c9bea084/typos-1.26.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:dbd9565d6aa90e928c40f55eb6f03bf5513183f0a789e05ed5b9c5eda0d54d83", size = 4275136 },
+    { url = "https://files.pythonhosted.org/packages/20/63/90eebd300b9b64cf219b886cfad24df3447d311048f54b426663e70f2424/typos-1.26.1-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6cd2e7732e7ba60bc52e63d9e6b0b39870d6640071982632a7abf2d80e6abc9e", size = 3359249 },
+    { url = "https://files.pythonhosted.org/packages/9a/49/d090847c400b5ee5191ce12ff26ba55d20c872e7a4245f5aa25287f8a7b3/typos-1.26.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d6f1169bcd81edd8fded70f0d80a67bd3854f06d54440cf58324d086e5b0c2ff", size = 4062950 },
+    { url = "https://files.pythonhosted.org/packages/71/44/ef1542963e1c1edf4fae2b4de946f37f11f2841f73612b707c781955a057/typos-1.26.1-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:8c4f2480d3f56a6f2fefc2589bc8899c52b19f07099ebfee6405a96385bde14e", size = 3887199 },
+    { url = "https://files.pythonhosted.org/packages/b0/2c/0cef43b2fb83ddf27644228a91abd4538be5af6f47d7ec910efa3f77f674/typos-1.26.1-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:efc690ae78275b423c08037a642a5c70be3e083287dba162f9bf633c2e960e31", size = 4068888 },
+    { url = "https://files.pythonhosted.org/packages/d6/26/442f9173672bf99ff6d8ce19a3e565d005ef1c5adcee1a0e738018511f80/typos-1.26.1-py3-none-win32.whl", hash = "sha256:15d669e9f3ed1f2b2fabb8552631ff684a2980a6de00c1302b80bbce3279927f", size = 2419732 },
+    { url = "https://files.pythonhosted.org/packages/8a/ec/e431a4390bddd12bc3c321e6ce11f596f5d631cda8f99e6d65f4553afa3f/typos-1.26.1-py3-none-win_amd64.whl", hash = "sha256:d0d44f84ed5b3a2ab1051af08d2ad06c49414ba09e1dfd649878834a3882957f", size = 2545460 },
+]
+
+[[package]]
 name = "uvicorn"
 version = "0.32.0"
 source = { registry = "https://pypi.org/simple" }
@@ -244,4 +343,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e0/fc/1d785078eefd6945f3e5bab5c076e4230698046231eb0f3747bc5c8fa992/uvicorn-0.32.0.tar.gz", hash = "sha256:f78b36b143c16f54ccdb8190d0a26b5f1901fe5a3c777e1ab29f26391af8551e", size = 77564 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/14/78bd0e95dd2444b6caacbca2b730671d4295ccb628ef58b81bee903629df/uvicorn-0.32.0-py3-none-any.whl", hash = "sha256:60b8f3a5ac027dcd31448f411ced12b5ef452c646f76f02f8cc3f25d8d26fd82", size = 63723 },
+]
+
+[[package]]
+name = "virtualenv"
+version = "20.27.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "distlib" },
+    { name = "filelock" },
+    { name = "platformdirs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/10/7f/192dd6ab6d91ebea7adf6c030eaf549b1ec0badda9f67a77b633602f66ac/virtualenv-20.27.0.tar.gz", hash = "sha256:2ca56a68ed615b8fe4326d11a0dca5dfbe8fd68510fb6c6349163bed3c15f2b2", size = 6483858 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c8/15/828ec11907aee2349a9342fa71fba4ba7f3af938162a382dd7da339dea16/virtualenv-20.27.0-py3-none-any.whl", hash = "sha256:44a72c29cceb0ee08f300b314848c86e57bf8d1f13107a5e671fb9274138d655", size = 3110969 },
 ]
