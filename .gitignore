@@ -10,8 +10,11 @@ wheels/
 .venv
 
 .ruff_cache/
+.mypy_cache
 
 .vscode/
 
-.debug.env
-.prod.env
+.env
+
+**/__pycache__
+**/*.pyc

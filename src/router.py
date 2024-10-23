@@ -19,8 +19,11 @@ from log.logger_config import LoggerConfig
 from log.py_logger_factory import PyLoggerFactory
 from mongodb.pymongo_factory import PyMongoFactory
 
-config = Config(".debug.env")
-DATABASE_URL = config("DATABASE_URL")
+config = Config(".env")
+DATABASE_HOST = config("MONGO_DATABASE_HOST")
+DATABASE_PORT = config("MONGO_DATABASE_PORT")
+SERVER_HOST = config("GARMENT_SERVER_HOST")
+SERVER_PORT = int(config("GARMENT_SERVER_PORT"))
 
 schemas = SchemaGenerator(
     {"openapi": "3.0.0", "info": {"title": "Example API", "version": "1.0"}}
@@ -60,7 +63,7 @@ routes = [
 exception_handlers = {500: error}
 
 
-mongo_factory = PyMongoFactory()
+mongo_factory = PyMongoFactory(uri=f"mongodb://{DATABASE_HOST}:{DATABASE_PORT}/")
 logger_factory = PyLoggerFactory()
 logger_config = LoggerConfig(
     "GARMENT",
@@ -72,7 +75,7 @@ logger_config = LoggerConfig(
 @contextlib.asynccontextmanager
 async def lifespan(app):
     logger = logger_factory.create_logger(logger_config)
-    logger.info("Starting connection to database...")
+    logger.info(f"Starting connection to database: {DATABASE_HOST}")
     mongo_client = mongo_factory.create()
     if mongo_client is None: 
         logger.error("Could not establish a conenction with Mongo")
@@ -92,4 +95,4 @@ app = Starlette(
 )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8080)
+    uvicorn.run(app, host=SERVER_HOST, port=SERVER_PORT)
